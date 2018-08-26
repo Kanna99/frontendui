@@ -1,0 +1,109 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Amatic SC', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #444;
+  margin: 0;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: inherit;
+}
+h2 {
+  font-size: 3em;
+  font-weight: 400;
+}
+b, strong {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+input, button {
+  font-family: inherit;
+  color: inherit;
+}
+button {
+  appearance: none;
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-anchor {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.xo-button {
+  font-size: 5em;
+  width: 2em;
+  font-weight: bold;
+  position: relative;
+  
+  &:after {
+    content: '_';
+    position: absolute;
+    bottom: -5%;
+    right: 0;
+    left: 0;
+  }
+  
+  &:focus:after,
+  &:hover:after {
+    opacity: 0;
+  }
+}
+
+.gameboard {
+  width: 600px;
+  max-width: 100vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  background: url(http://images.designtrends.com/wp-content/uploads/2015/12/22100402/Grungy-Chalkboard-Texture.jpg) 0 0 no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.box {
+  flex: 1 30%;
+  height: calc(50vh/3 - 3px); /* 3 boxes, excluding 3px border */
+  border: 3px solid #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: crosshair;
+}
+
+.box:nth-child(n+2) {
+  border-left: none;
+}
+.box:nth-child(3n+1) {
+  border-left: 3px solid #fff;
+}
+.box:nth-child(n+4) {
+  border-top: none;
+}
+
+.box.disabled {
+  cursor: not-allowed;
+}
+
+.box.disabled:active {
+  cursor: not-allowed;
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
